@@ -3,7 +3,7 @@
 require_once('Services/ConvertPhone.php');
 use Services\ConvertPhone;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (!empty($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Content-Type: application/json");
 
     if (!empty($_POST['textToConvert'])) {
