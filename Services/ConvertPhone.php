@@ -39,7 +39,8 @@ class ConvertPhone
      * @param $text
      */
     protected function setText($text){
-        $this->textToConvert = strtolower($text);
+        $textToConvert = iconv('UTF-8', 'ISO-8859-1//TRANSLIT//IGNORE', strtolower($text));
+        $this->textToConvert = $textToConvert;
     }
 
     /**
